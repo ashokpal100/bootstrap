@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+      
+      <script>
+         $(document).ready(function(){
+            removeSection = function(e) {
+               $(e).parents(".subject").remove();
+            
+               $('[data-spy="scroll"]').each(function () {
+                  var $spy = $(this).scrollspy('refresh')
+               });
+            }
+         
+            $("#Navexample").scrollspy();
+         
+            // The event is fired when an item gets actived with the scrollspy
+            $("#Navexample").on('activate.bs.scrollspy', function () {
+               var currentSection = $(".nav li.active > a").text();
+               $("#spyevent").html("Current Item being viewed >> " + currentSection);
+            })
+        
+         });
+      </script>
+   
+      <style>
+         .scroll-box {
+            height: 250px;
+            position: relative;
+            overflow: auto;
+            font-size:2em;
+         }
+      </style>
+      
+   </head>
+   
+   <body>
+      <div class = "container">
+         <nav id = "Navexample" class = "navbar navbar-default" role = "navigation">
+      
+            <!-- Nav Bar -->
+            <div class = "navbar-header">
+               <button type = "button" class = "navbar-toggle" 
+                  data-toggle = "collapse" data-target = "#navbarCollapse">
+               
+                  <span class = "sr-only">Toggle navigation</span>
+                  <span class = "icon-bar"></span>
+                  <span class = "icon-bar"></span>
+                  <span class = "icon-bar"></span>
+               </button>
+          
+               <a class = "navbar-brand" href = "#">Tutorials Point</a>
+            </div>
+            
+            <!-- Links and Sublinks -->
+            <div class = "collapse navbar-collapse" id = "navbarCollapse">
+               <ul class = "nav navbar-nav">
+                  <li class = "active"><a href = "#subject-1">Subject 1</a></li>
+                  <li><a href = "#subject-2">Subject 2</a></li>
+               
+                  <li class = "dropdown"><a href = "#" class = "dropdown-toggle" 
+                     data-toggle = "dropdown">Subject 3<b class = "caret"></b></a>
+                     
+                     <ul class = "dropdown-menu">
+                        <li><a href = "#subject-3-1">Subject 3.1</a></li>
+                        <li><a href = "#subject-3-2">Subject 3.2</a></li>
+                        <li><a href = "#subject-3-3">Subject 3.3</a></li>
+                     </ul>
+                     
+                  </li>
+            
+                  <li><a href = "#subject-4">Subject 4</a></li>
+               </ul>
+            </div>
+            
+         </nav>
+         
+         <div class = "scroll-box" data-spy = "scroll" data-offset = "0">
+            <div class = "subject">
+            
+               <h3 id = "subject-1">Subject 1 
+                  <small><a href = "#" onclick = "removeSubject(this);">Remove Subject ×</a></small>
+               </h3>
+            
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        
+            <hr>
+         
+            <div class = "subject">
+               <h3 id = "subject-2">Subject 2 
+                  <small><a href = "#" onclick = "removeSubject(this);">Remove Subject ×</a></small>
+               </h3>
+            
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        
+            <hr>
+         
+            <div class = "subject">
+               <h3 id = "subject-3">Subject 3 
+                  <small><a href = "#" onclick = "removeSubject(this);"> Remove Subject ×</a></small>
+               </h3>
+            
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><
+            </div>
+        
+            <hr>
+            
+            <div class = "subject">
+               <h4 id = "subject-3-1">Subject 3.1
+                  <small><a href = "#" onclick = "removeSubject(this);"> Remove Subject ×</a></small>
+               </h4>
+               
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <div class = "subject">
+               <h4 id = "subject-3-2">Subject 3.2
+                  <small><a href = "#" onclick = "removeSubject(this);"> Remove Subject ×</a></small>
+               </h4>
+               
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+            <div class = "subject">
+               <h4 id = "subject-3-3">Subject 3.3 
+                  <small><a href = "#" onclick = "removeSubject(this);">Remove Subject ×</a></small>
+               </h4>
+               
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        
+            <hr>
+            
+            <div class = "subject">
+               <h3 id = "subject-4">Subject 4 
+                  <small><a href = "#" onclick = "removeSubject(this);">Remove Subject ×</a></small>
+               </h3>
+               
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            
+         </div>
+         <hr>
+         
+         <h4 id = "spyevent" class = "text-info"></h4>
+      </div>
+      
+   </body>
+</html>
+
+</div>
+
+</body>
+</html>
+
+
+
+
